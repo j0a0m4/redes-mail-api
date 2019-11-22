@@ -1,5 +1,5 @@
 import express from 'express'
-import createEmail from './createEmail'
+import createEmail from './sendEmail'
 
 const routes = express.Router()
 

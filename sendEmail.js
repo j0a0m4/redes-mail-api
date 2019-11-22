@@ -1,5 +1,9 @@
 import { createTransport } from 'nodemailer'
-import authCredentials from './authCredentials'
+
+const authCredentials = {
+  user: 'f309105f192a2f',
+  pass: '7a4345ef45763e'
+}
 
 const credentials = {
   host: 'smtp.mailtrap.io',
@@ -7,4 +11,19 @@ const credentials = {
   auth: authCredentials
 }
 
-export const transport = createTransport(credentials)
+const transport = createTransport(credentials)
+
+function sendCtrl(err, info) {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log(info)
+  }
+}
+
+function createEmail(message) {
+  console.log(message)
+  transport.sendMail(message, sendCtrl)
+}
+
+export default createEmail
