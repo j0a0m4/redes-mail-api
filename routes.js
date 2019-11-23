@@ -3,10 +3,7 @@ import createEmail from './sendEmail'
 
 const routes = express.Router()
 
-// Root
 routes.route('/').get(rootHandler)
-
-// Send
 routes.route('/send').post(sendHandler)
 
 function rootHandler(req, res) {
