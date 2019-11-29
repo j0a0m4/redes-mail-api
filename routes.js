@@ -1,7 +1,7 @@
-import express from 'express'
+import { Router } from 'express'
 import createEmail from './sendEmail'
 
-const routes = express.Router()
+const routes = Router()
 
 routes.route('/').get(rootHandler)
 routes.route('/send').post(sendHandler)
