@@ -23,13 +23,10 @@ routes
 
 export default routes
 ```
-### localhost:9000/
-#### GET
+### GET
 A função `roothandler` é chamada toda vez que uma requisição GET é recebida pelo servidor na rota `localhost:9000/`
 
-
-### localhost:9000/send
-#### POST
+### POST
 A funcionalidade principal do app se encontra na função `sendHandler` que é é chamada quando uma requisição POST é recebida na rota `localhost:9000/send`. Essa função é responsável pela funcionaliddade principal do app, pois é ela que vai chamar a função de criar email e enviar.
 
 ## Nodemailer
