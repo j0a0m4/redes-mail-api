@@ -8,23 +8,29 @@ Ao rodar o script `npm start` o servidor vai ouvir na porta 9000.
 ## Rotas
 As rotas da API estão configuradas usando o Router do express
 ```javascript
-import express from 'express'
-const routes = express.Router()
+import { Router } from 'express'
+const routes = Router()
 
-routes.route('/').get(rootHandler)
-routes.route('/send').post(sendHandler)
+// Configurando GET request para 'localhost:9000/'
+routes
+.route('/')
+  .get(rootHandler)
+  
+// Configurando POST request para 'localhost:9000/send'
+routes
+.route('/send')
+  .post(sendHandler)
 
 export default routes
 ```
-
 ### localhost:9000/
 #### GET
-Responde com um JSON
+A função `roothandler` é chamada toda vez que uma requisição GET é recebida pelo servidor na rota `localhost:9000/`
 
 
 ### localhost:9000/send
 #### POST
-Chama a função create email com o payload
+A funcionalidade principal do app se encontra na função `sendHandler` que é é chamada quando uma requisição POST é recebida na rota `localhost:9000/send`. Essa função é responsável pela funcionaliddade principal do app, pois é ela que vai chamar a função de criar email e enviar.
 
 ## Nodemailer
 O nodemailer está configurado para usar o [mailtrap](https://mailtrap.io) como servidor de e-mail para teste.
